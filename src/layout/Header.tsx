@@ -1,8 +1,8 @@
 const navItems = [
-  { name: "About", href: "#about" },
-  { name: "Experience", href: "#experience" },
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
+  { name: "about", href: "#about" },
+  { name: "experience", href: "#experience" },
+  { name: "projects", href: "#projects" },
+  { name: "contact", href: "#contact" },
 ];
 
 export const Header = () => {
