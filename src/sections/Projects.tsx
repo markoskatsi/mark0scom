@@ -1,5 +1,6 @@
 import { projects } from "../data/projects.ts";
 import { CardContainer, Card } from "../ui/Card.tsx";
+import { Button, ButtonTray } from "../ui/Button.tsx";
 
 const Projects = () => {
   return (
@@ -12,23 +13,11 @@ const Projects = () => {
               {p.image && <img src={p.image} alt={p.title} />}
               <div className="overlay">
                 <h3>{p.title}</h3>
-                <div className="actions">
-                  {p.live && (
-                    <a href={p.live} className="btn-primary">
-                      View Live
-                    </a>
-                  )}
-                  {p.download && (
-                    <a href={p.download} className="btn-primary">
-                      Download
-                    </a>
-                  )}
-                  {p.github && (
-                    <a href={p.github} className="btn-outline">
-                      Code
-                    </a>
-                  )}
-                </div>
+                <ButtonTray>
+                  {p.live && <Button href={p.live}>View Live</Button>}
+                  {p.download && <Button href={p.download}>Download</Button>}
+                  {p.github && <Button variant="outline" href={p.github}>Code</Button>}
+                </ButtonTray>
               </div>
             </div>
             <div className="content">
