@@ -72,6 +72,11 @@ main {
   flex: 1;
 }
 
+header a {
+  text-decoration: none;
+  color: var();
+}
+
 header {
   border-bottom: 1px solid var(--border);
   padding: 32px;
