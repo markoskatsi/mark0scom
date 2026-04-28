@@ -1,6 +1,7 @@
 import seatImage from "../assets/projects/seat.jpg";
 import pawsImage from "../assets/projects/paws.png";
 import cvbuilderImage from "../assets/projects/cvbuilder.jpg";
+import codesheildImage from "../assets/projects/codeshield.png";
 
 export interface Project {
   title: string;
@@ -9,6 +10,7 @@ export interface Project {
   live?: string;
   image?: string;
   github?: string;
+  download?: string;
 }
 
 export const projects: Project[] = [
@@ -27,6 +29,7 @@ export const projects: Project[] = [
       "React Native geocaching app with map-based discovery, user-created caches, and gamified points system.",
     skills: ["React Native", "JavaScript", "Expo", "Map APIs"],
     github: "https://github.com/markoskatsi/GeoQuest",
+    download: "https://expo.dev/@markoskatsi/geoquest",
   },
   {
     title: "HabitTracker",
@@ -34,6 +37,8 @@ export const projects: Project[] = [
       "Android habit tracker with reminders and progress indicators, built in Kotlin with MVVM architecture.",
     skills: ["Android", "Kotlin", "Jetpack", "MVVM"],
     github: "https://github.com/markoskatsi/HabitTracker",
+    download:
+      "https://play.google.com/store/apps/details?id=com.markoskatsi.habittracker",
   },
   {
     title: "Paws & Pixels",
@@ -45,6 +50,15 @@ export const projects: Project[] = [
     image: pawsImage,
   },
   {
+    title: "CodeShield",
+    description:
+      "Pytest test suite for a FastAPI backend with mocking, plus manual UI testing of a React frontend.",
+    skills: ["Pytest", "Mocking", "Testing"],
+    github: "https://github.com/XP-Elites",
+    live: "https://xp.cattoindustries.com/",
+    image: codesheildImage,
+  },
+  {
     title: "CVBuilder",
     description:
       "Java Swing desktop app for building and managing CV content across multiple versioned sections.",
@@ -52,5 +66,6 @@ export const projects: Project[] = [
     skills: ["Java", "Swing", "OOP", "MVC"],
     github: "https://github.com/markoskatsi/CVBuilder",
     image: cvbuilderImage,
+    download: "https://expo.dev/@markoskatsi/cvbuilder",
   },
 ];

@@ -18,6 +18,11 @@ const Projects = () => {
                       View Live
                     </a>
                   )}
+                  {p.download && (
+                    <a href={p.download} className="btn-primary">
+                      Download
+                    </a>
+                  )}
                   {p.github && (
                     <a href={p.github} className="btn-outline">
                       Code
