@@ -1,6 +1,7 @@
 :root {
   --text: #6b6375;
-  --text-h: #08060d;
+  --text-h: #0d0a06;
+  --text-s: #fd7628;
   --bg: #fff;
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
@@ -104,4 +105,19 @@ section {
   margin: 0 auto;
   padding: 32px;
   box-sizing: border-box;
+  text-align: left;
+
+  &:not(:last-of-type)::after {
+    content: "";
+    display: block;
+    width: 10%;
+    height: 6px;
+    background: var(--accent);
+    margin-top: 32px;
+  }
+}
+
+h2 {
+  font-size: 28px;
+  font-style: italic;
 }

@@ -8,6 +8,13 @@ const Projects = () => {
         <div key={p.title}>
           <h3>{p.title}</h3>
           <p>{p.description}</p>
+          {p.skills && (
+            <p className="skills">
+              {p.skills.map((s) => (
+                <span key={s}>{s}</span>
+              ))}
+            </p>
+          )}
           {p.live && <a href={p.live}>Live</a>}
           {p.github && <a href={p.github}>GitHub</a>}
         </div>
