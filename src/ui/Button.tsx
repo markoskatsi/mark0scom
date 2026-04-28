@@ -10,7 +10,12 @@ export const Button = ({
   href?: string;
 }) => {
   return (
-    <a className={variant} href={href}>
+    <a
+      className={variant}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       {children}
     </a>
   );
