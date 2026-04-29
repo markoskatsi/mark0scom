@@ -5,8 +5,12 @@ const Contact = () => {
     <section id="contact">
       <h2>Contact</h2>
       <p>You can reach me at {personal.email}</p>
-      <a href={personal.linkedin}>LinkedIn</a>
-      <a href={personal.github}>GitHub</a>
+      <a href={personal.linkedin} target="_blank" rel="noopener noreferrer">
+        LinkedIn
+      </a>
+      <a href={personal.github} target="_blank" rel="noopener noreferrer">
+        GitHub
+      </a>
     </section>
   );
 };
