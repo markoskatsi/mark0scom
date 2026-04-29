@@ -1,16 +1,36 @@
 import { personal } from "../data/personal.ts";
+import { Button, ButtonTray } from "../ui/Button.tsx";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { Card } from "../ui/Card.tsx";
 
 const Contact = () => {
   return (
     <section id="contact">
       <h2>Contact</h2>
-      <p>You can reach me at {personal.email}</p>
-      <a href={personal.linkedin} target="_blank" rel="noopener noreferrer">
-        LinkedIn
-      </a>
-      <a href={personal.github} target="_blank" rel="noopener noreferrer">
-        GitHub
-      </a>
+      <Card>
+        <div className="contact-wrapper">
+          <div className="contact-bio">
+            <p className="contact-tagline">
+              Open to opportunities, conversations, and building things
+              together.
+            </p>
+            <a href={`mailto:${personal.email}`} className="contact-email">
+              {personal.email}
+            </a>
+          </div>
+          <div className="contact-info">
+            <ButtonTray>
+              <Button href={personal.linkedin} variant="contact-icon">
+                <FaLinkedin size={22} />
+              </Button>
+              <Button href={personal.github} variant="contact-icon">
+                <FaGithub size={22} />
+              </Button>
+            </ButtonTray>
+          </div>
+        </div>
+      </Card>
     </section>
   );
 };

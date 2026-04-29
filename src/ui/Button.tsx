@@ -6,7 +6,7 @@ export const Button = ({
   href,
 }: {
   children: React.ReactNode;
-  variant?: "primary" | "outline";
+  variant?: "primary" | "outline" | "contact-icon";
   href?: string;
 }) => {
   return (
