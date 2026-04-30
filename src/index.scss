@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
 :root {
   --text: #6b6375;
   --text-h: #0d0a06;
@@ -62,6 +64,11 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+}
+
+h1 {
+  font-family: "PT Serif", serif;
+  font-size: 36px;
 }
 
 html {

@@ -1,3 +1,4 @@
+import factcheckImage from "../assets/projects/factcheck.png";
 import seatImage from "../assets/projects/seat.jpg";
 import pawsImage from "../assets/projects/paws.png";
 import cvbuilderImage from "../assets/projects/cvbuilder.jpg";
@@ -15,10 +16,33 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "FactCheck",
+    description:
+      "Full-stack fact-checking app with a React frontend, containerised Node.js/Express API, and MySQL database. Self-hosted on a personal Ubuntu server with a CI/CD pipeline via GitHub Actions.",
+    skills: [
+      "React",
+      "Express",
+      "JavaScript",
+      "CI/CD pipelines",
+      "Docker",
+      "MySQL",
+      "SCSS",
+    ],
+    live: "https://factcheck.mark0s.com/",
+    github: "https://github.com/markoskatsi/factcheck-frontend",
+    image: factcheckImage,
+  },
+  {
     title: "SeAT",
     description:
       "React web app for event seating and attendee management, built for a real client.",
-    skills: ["React", "JavaScript", "SCSS", "Pair Programming"],
+    skills: [
+      "React",
+      "JavaScript",
+      "SCSS",
+      "Pair Programming",
+      "CI/CD pipelines",
+    ],
     live: "https://seat.mark0s.com/",
     github: "https://github.com/markoskatsi/SeAT",
     image: seatImage,

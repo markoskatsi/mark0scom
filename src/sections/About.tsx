@@ -1,21 +1,28 @@
+import { personal } from "../data/personal";
+import { education } from "../data/education";
+
 const About = () => {
+  const kingston = education[0];
+  const barnsley = education[1];
+
   return (
     <section id="about">
-      <h2>About Me</h2>
+      <h1>{personal.name}</h1>
       <p>
-        My name is Markos Katsi, and I'm a final-year Computer Science student
-        at Kingston University. I'm passionate about full-stack development and
-        building projects that make a real difference in people's daily lives.
-        I'm currently looking for opportunities to contribute and grow as a
-        developer.
+        I am currently a final-year {kingston.degree} student @{" "}
+        <strong>{kingston.institution}</strong>. I'm passionate about full-stack
+        development and building projects that make a real difference in
+        people's daily lives. I'm currently looking for{" "}
+        <strong>opportunities</strong> to contribute and grow as a developer.
       </p>
       <p>
         My interest in computers started young, getting my first PC and wanting
         to know how everything worked behind the scenes. That curiosity grew
         into tinkering with hardware, becoming the tech support for my parents,
-        and eventually studying Information Technology at Barnsley College. Once
-        I was introduced to programming, I knew I wanted to take it further,
-        which led me to Computer Science at Kingston University.
+        and eventually studying {barnsley.degree} @{" "}
+        <strong>{barnsley.institution}</strong>. Once I was introduced to
+        programming, I knew I wanted to take it further, which led me to
+        {kingston.degree} @ {kingston.institution}.
       </p>
       <p>
         I enjoy taking applications through the full development process, from
