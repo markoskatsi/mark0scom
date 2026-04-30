@@ -1,6 +1,7 @@
 import { Button, ButtonTray } from "../../ui/Button";
+import type { Project } from "../../data/projects";
 
-export const ProjectItem = ({ project }: { project: any }) => {
+export const ProjectItem = ({ project }: { project: Project }) => {
   return (
     <>
       <div className="img">
@@ -24,8 +25,8 @@ export const ProjectItem = ({ project }: { project: any }) => {
         <p>{project.description}</p>
         {project.skills && (
           <div className="skills">
-            {project.skills.map((s: string) => (
-              <span key={s}>{s}</span>
+            {project.skills.map((skill: string) => (
+              <span key={skill}>{skill}</span>
             ))}
           </div>
         )}

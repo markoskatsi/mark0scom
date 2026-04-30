@@ -1,4 +1,6 @@
-export const ExperienceItem = ({ experience }: { experience: any }) => {
+import type { Experience } from "../../data/experience";
+
+export const ExperienceItem = ({ experience }: { experience: Experience }) => {
   return (
     <div key={experience.title}>
       <h3>

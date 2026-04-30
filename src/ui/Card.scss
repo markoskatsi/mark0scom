@@ -65,6 +65,7 @@
     aspect-ratio: 16 / 9;
     background: var(--social-bg);
     overflow: hidden;
+    cursor: grabbing;
 
     img {
       width: 100%;
@@ -132,6 +133,7 @@
 
   .content {
     padding: 16px 20px 20px;
+    cursor: grabbing;
 
     p {
       font-size: 0.9rem;
