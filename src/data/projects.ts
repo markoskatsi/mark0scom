@@ -26,6 +26,7 @@ export const projects: Project[] = [
       "CI/CD pipelines",
       "Docker",
       "MySQL",
+      "Linux",
       "SCSS",
     ],
     live: "https://factcheck.mark0s.com/",

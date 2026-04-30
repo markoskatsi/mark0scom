@@ -1,11 +1,6 @@
-import { FaGithub } from "react-icons/fa";
-import { FaReact } from "react-icons/fa";
-import { BiLogoTypescript } from "react-icons/bi";
-import { BsFiletypeScss } from "react-icons/bs";
-import { FaHome } from "react-icons/fa";
-import { FaServer } from "react-icons/fa";
-import "./Footer.scss";
 import { Button } from "../ui/Button";
+import { Icon } from "../ui/Icon";
+import "./Footer.scss";
 
 export const Footer = () => {
   return (
@@ -15,28 +10,13 @@ export const Footer = () => {
       </div>
       <div className="footer-right">
         <div className="footer-info">
-          Built with{" "}
-          <span title="React">
-            <FaReact />
-          </span>
-          ,{" "}
-          <span title="TypeScript">
-            <BiLogoTypescript />
-          </span>
-          ,{" "}
-          <span title="SCSS">
-            <BsFiletypeScss />
-          </span>
-          , and hosted on my{" "}
-          <span title="Home Server">
-            <FaHome />
-            <FaServer />
-          </span>
+          Built with <Icon.React />, <Icon.TypeScript />, <Icon.SCSS />, and
+          hosted on my <Icon.Home /> <Icon.Server />
         </div>
         <div className="footer-source">
           Source code available on{" "}
           <Button href="https://github.com/markoskatsi/mark0scom">
-            <FaGithub />
+            <Icon.GitHub />
           </Button>
         </div>
       </div>
