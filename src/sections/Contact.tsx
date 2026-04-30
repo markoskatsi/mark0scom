@@ -1,6 +1,5 @@
 import { personal } from "../data/personal.ts";
 import { Button, ButtonTray } from "../ui/Button.tsx";
-import { FaGithub } from "react-icons/fa";
 import { Icon } from "../ui/Icon.tsx";
 import { Card } from "../ui/Card.tsx";
 
