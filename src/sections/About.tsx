@@ -21,7 +21,7 @@ const About = () => {
         into tinkering with hardware, becoming the tech support for my parents,
         and eventually studying {barnsley.degree} @{" "}
         <strong>{barnsley.institution}</strong>. Once I was introduced to
-        programming, I knew I wanted to take it further, which led me to
+        programming, I knew I wanted to take it further, which led me to{" "}
         {kingston.degree} @ {kingston.institution}.
       </p>
       <p>
