@@ -76,35 +76,6 @@ main {
   flex: 1;
 }
 
-.up-arrow {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: var(--accent-bg);
-  border: 1px solid var(--accent-border);
-  border-radius: 50%;
-  padding: 10px;
-  cursor: pointer;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
-  animation: drop-in 0.4s ease-out;
-
-  &:hover {
-    opacity: 1;
-  }
-}
-
-@keyframes drop-in {
-  from {
-    transform: translateY(-12px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 0.7;
-  }
-}
-
 header {
   padding: 32px;
   display: flex;

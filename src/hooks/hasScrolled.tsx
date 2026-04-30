@@ -4,7 +4,7 @@ export const useHasScrolled = () => {
   const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setHasScrolled(window.scrollY !== 0);
+    const onScroll = () => setHasScrolled(window.scrollY > 200);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);

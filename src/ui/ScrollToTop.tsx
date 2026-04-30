@@ -1,5 +1,6 @@
 import { FaArrowUp } from "react-icons/fa";
 import { useHasScrolled } from "../hooks/hasScrolled.tsx";
+import "./ScrollToTop.scss";
 
 const ScrollToTop = () => {
   const hasScrolled = useHasScrolled();
