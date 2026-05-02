@@ -7,11 +7,20 @@ import { FaServer } from "react-icons/fa";
 import { FaLinux } from "react-icons/fa";
 import { GiOctopus } from "react-icons/gi";
 import { FaLinkedin } from "react-icons/fa";
+import { FaExpand } from "react-icons/fa";
 import "./Icon.scss";
 
 export const Icon = ({ children }: { children: React.ReactNode }) => {
   return <div className="icon">{children}</div>;
 };
+
+function Expand({ size = 18 }: { size?: number }) {
+  return (
+    <span title="Expand" className="icon">
+      <FaExpand size={size} />
+    </span>
+  );
+}
 
 function GitHub({ size = 18 }: { size?: number }) {
   return (
@@ -99,3 +108,4 @@ Icon.Server = Server;
 Icon.Linux = Linux;
 Icon.Octopus = Octopus;
 Icon.Linkedin = Linkedin;
+Icon.Expand = Expand;

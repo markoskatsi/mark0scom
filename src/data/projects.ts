@@ -13,7 +13,6 @@ export interface Project {
   live?: string;
   image?: string;
   github?: string;
-  download?: string;
 }
 
 export const projects: Project[] = [
@@ -56,7 +55,6 @@ export const projects: Project[] = [
       "React Native geocaching app with map-based discovery, user-created caches, and gamified points system.",
     skills: ["React Native", "JavaScript", "Expo", "Map APIs"],
     github: "https://github.com/markoskatsi/GeoQuest",
-    download: "https://expo.dev/@markoskatsi/geoquest",
     image: geoquestImage,
   },
   {
@@ -65,8 +63,6 @@ export const projects: Project[] = [
       "Android habit tracker with reminders and progress indicators, built in Kotlin with MVVM architecture.",
     skills: ["Android", "Kotlin", "Jetpack", "MVVM"],
     github: "https://github.com/markoskatsi/HabitTracker",
-    download:
-      "https://play.google.com/store/apps/details?id=com.markoskatsi.habittracker",
     image: habittrackerImage,
   },
   {
@@ -95,6 +91,5 @@ export const projects: Project[] = [
     skills: ["Java", "Swing", "OOP", "MVC"],
     github: "https://github.com/markoskatsi/CVBuilder",
     image: cvbuilderImage,
-    download: "https://expo.dev/@markoskatsi/cvbuilder",
   },
 ];
