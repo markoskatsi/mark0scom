@@ -3,6 +3,8 @@ import seatImage from "../assets/projects/seat.jpg";
 import pawsImage from "../assets/projects/paws.png";
 import cvbuilderImage from "../assets/projects/cvbuilder.jpg";
 import codesheildImage from "../assets/projects/codeshield.png";
+import habittrackerImage from "../assets/projects/habittracker.png";
+import geoquestImage from "../assets/projects/geoquest.png";
 
 export interface Project {
   title: string;
@@ -55,6 +57,7 @@ export const projects: Project[] = [
     skills: ["React Native", "JavaScript", "Expo", "Map APIs"],
     github: "https://github.com/markoskatsi/GeoQuest",
     download: "https://expo.dev/@markoskatsi/geoquest",
+    image: geoquestImage,
   },
   {
     title: "HabitTracker",
@@ -64,6 +67,7 @@ export const projects: Project[] = [
     github: "https://github.com/markoskatsi/HabitTracker",
     download:
       "https://play.google.com/store/apps/details?id=com.markoskatsi.habittracker",
+    image: habittrackerImage,
   },
   {
     title: "Paws & Pixels",
