@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "dotenv": "^17.4.2",
     "react": "^19.2.5",
     "react-alice-carousel": "^2.9.1",
     "react-dom": "^19.2.5",
