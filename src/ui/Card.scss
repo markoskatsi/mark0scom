@@ -69,6 +69,13 @@
     }
 
     form {
+      .form-title {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--text);
+        margin: 0 0 12px;
+      }
+
       display: flex;
       flex-direction: column;
       gap: 8px;
