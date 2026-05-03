@@ -8,6 +8,9 @@ import { FaLinux } from "react-icons/fa";
 import { GiOctopus } from "react-icons/gi";
 import { FaLinkedin } from "react-icons/fa";
 import { FaExpand } from "react-icons/fa";
+import { GiCat } from "react-icons/gi";
+import { GiFox } from "react-icons/gi";
+import { GiPanda } from "react-icons/gi";
 import "./Icon.scss";
 
 export const Icon = ({ children }: { children: React.ReactNode }) => {
@@ -99,6 +102,51 @@ function Octopus({
   );
 }
 
+function Cat({
+  size = 18,
+  noTitle = false,
+}: {
+  size?: number;
+  noTitle?: boolean;
+}) {
+  if (noTitle) return <GiCat size={size} />;
+  return (
+    <span title="Cat" className="icon">
+      <GiCat size={size} />
+    </span>
+  );
+}
+
+function Fox({
+  size = 18,
+  noTitle = false,
+}: {
+  size?: number;
+  noTitle?: boolean;
+}) {
+  if (noTitle) return <GiFox size={size} />;
+  return (
+    <span title="Fox" className="icon">
+      <GiFox size={size} />
+    </span>
+  );
+}
+
+function Panda({
+  size = 18,
+  noTitle = false,
+}: {
+  size?: number;
+  noTitle?: boolean;
+}) {
+  if (noTitle) return <GiPanda size={size} />;
+  return (
+    <span title="Panda" className="icon">
+      <GiPanda size={size} />
+    </span>
+  );
+}
+
 Icon.GitHub = GitHub;
 Icon.React = React;
 Icon.TypeScript = TypeScript;
@@ -109,3 +157,6 @@ Icon.Linux = Linux;
 Icon.Octopus = Octopus;
 Icon.Linkedin = Linkedin;
 Icon.Expand = Expand;
+Icon.Cat = Cat;
+Icon.Fox = Fox;
+Icon.Panda = Panda;

@@ -1,4 +1,7 @@
+import { useState } from "react";
 import { Icon } from "../ui/Icon";
+
+const icons = [Icon.Octopus, Icon.Cat, Icon.Fox, Icon.Panda];
 
 const navItems = [
   { name: "about", href: "#about" },
@@ -8,10 +11,15 @@ const navItems = [
 ];
 
 export const Header = () => {
+  const [iconIndex, setIconIndex] = useState(0);
+  const HeaderIcon = icons[iconIndex];
+
+  const changeIcon = () => setIconIndex((prev) => (prev + 1) % icons.length);
+
   return (
     <header>
-      <div className="header-logo">
-        <Icon.Octopus size={28} noTitle />
+      <div className="header-logo" onClick={changeIcon}>
+        <HeaderIcon size={28} noTitle />
       </div>
       {navItems.map((item) => (
         <div key={item.name}>
