@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Icon } from "../ui/Icon";
+import { useTheme } from "../hooks/useTheme.tsx";
 
 const icons = [Icon.Octopus, Icon.Cat, Icon.Fox, Icon.Panda];
 
@@ -11,29 +12,13 @@ const navItems = [
 ];
 
 export const Header = () => {
-  const [iconIndex, setIconIndex] = useState(0);
+  const { isDark, toggleTheme } = useTheme();
 
-  const [isDark, setIsDark] = useState(() => {
-    const theme = localStorage.getItem("theme");
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark-theme");
-      return true;
-    }
-    return false;
-  });
+  const [iconIndex, setIconIndex] = useState(0);
 
   const HeaderIcon = icons[iconIndex];
 
   const changeIcon = () => setIconIndex((prev) => (prev + 1) % icons.length);
-
-  const toggleTheme = () => {
-    document.documentElement.classList.toggle("dark-theme");
-    setIsDark((prev) => !prev);
-  };
-
-  useEffect(() => {
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-  }, [isDark]);
 
   return (
     <header>
