@@ -28,6 +28,7 @@ export const ProjectItem = ({ project }: { project: Project }) => {
             {project.live && <Button href={project.live}>View Live</Button>}
             {project.github && (
               <Button variant="outline" href={project.github}>
+                <Icon.GitHub size={16} />
                 Code
               </Button>
             )}
