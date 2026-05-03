@@ -11,3 +11,10 @@ div.icon {
     height: 100%;
   }
 }
+
+div.theme {
+  cursor: pointer;
+  &:hover {
+    color: var(--accent);
+  }
+}

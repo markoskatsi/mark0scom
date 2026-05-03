@@ -11,6 +11,8 @@ import { FaExpand } from "react-icons/fa";
 import { GiCat } from "react-icons/gi";
 import { GiFox } from "react-icons/gi";
 import { GiPanda } from "react-icons/gi";
+import { MdLightMode } from "react-icons/md";
+import { MdDarkMode } from "react-icons/md";
 import "./Icon.scss";
 
 export const Icon = ({ children }: { children: React.ReactNode }) => {
@@ -147,6 +149,22 @@ function Panda({
   );
 }
 
+function Light({ size = 18 }: { size?: number }) {
+  return (
+    <div className="theme">
+      <MdLightMode size={size} />
+    </div>
+  );
+}
+
+function Dark({ size = 18 }: { size?: number }) {
+  return (
+    <div className="theme">
+      <MdDarkMode size={size} />
+    </div>
+  );
+}
+
 Icon.GitHub = GitHub;
 Icon.React = React;
 Icon.TypeScript = TypeScript;
@@ -160,3 +178,5 @@ Icon.Expand = Expand;
 Icon.Cat = Cat;
 Icon.Fox = Fox;
 Icon.Panda = Panda;
+Icon.Light = Light;
+Icon.Dark = Dark;
