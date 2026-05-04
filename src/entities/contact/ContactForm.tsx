@@ -1,40 +1,75 @@
-import { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
+import { useState } from "react";
 import { Button } from "../../ui/Button.tsx";
 
-const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const emptyForm = {
+  name: "",
+  email: "",
+  message: "",
+};
 
 export const ContactForm = () => {
-  const formRef = useRef<HTMLFormElement>(null);
+  const [fields, setFields] = useState(emptyForm);
+  
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
     "idle",
   );
 
-  const handleSubmit = (e: { preventDefault(): void }) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
-    if (!formRef.current) return;
-
     setStatus("sending");
-    emailjs
-      .sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
-      .then(() => {
+    try {
+      const response = await fetch("https://mail.mark0s.com/email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(fields),
+      });
+      if (response.status === 200) {
         setStatus("sent");
-        formRef.current?.reset();
-      })
-      .catch(() => setStatus("error"));
+        setFields(emptyForm);
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    setFields({ ...fields, [e.target.name]: e.target.value });
   };
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <div className="form-title">Send me a message</div>
       <label htmlFor="name">Your Name:</label>
-      <input type="text" id="name" name="name" required />
+      <input
+        type="text"
+        id="name"
+        name="name"
+        value={fields.name}
+        onChange={handleChange}
+        required
+      />
       <label htmlFor="email">Your Email:</label>
-      <input type="email" id="email" name="email" required />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        value={fields.email}
+        onChange={handleChange}
+        required
+      />
       <label htmlFor="message">Your Message:</label>
-      <textarea id="message" name="message" rows={4} required />
+      <textarea
+        id="message"
+        name="message"
+        rows={4}
+        value={fields.message}
+        onChange={handleChange}
+        required
+      />
       {status === "sent" && (
         <p className="form-status success">Message sent!</p>
       )}
