@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Icon } from "../ui/Icon";
-import { useTheme } from "../hooks/useTheme.tsx";
 import "./Header.scss";
+import { ThemeToggle } from "../ui/ThemeToggle";
 
 const icons = [Icon.Octopus, Icon.Cat, Icon.Fox, Icon.Panda];
 
@@ -13,8 +13,6 @@ const navItems = [
 ];
 
 export const Header = () => {
-  const { isDark, toggleTheme } = useTheme();
-
   const [iconIndex, setIconIndex] = useState(0);
 
   const HeaderIcon = icons[iconIndex];
@@ -31,9 +29,7 @@ export const Header = () => {
           <a href={item.href}>{item.name}</a>
         </div>
       ))}
-      <div onClick={toggleTheme}>
-        {isDark ? <Icon.Light size={28} /> : <Icon.Dark size={28} />}
-      </div>
+      <ThemeToggle />
     </header>
   );
 };
