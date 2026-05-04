@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Icon } from "../ui/Icon";
 import { useTheme } from "../hooks/useTheme.tsx";
+import "./Header.scss";
 
 const icons = [Icon.Octopus, Icon.Cat, Icon.Fox, Icon.Panda];
 
