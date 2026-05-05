@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "../../ui/Button.tsx";
+import { API } from "../../api/API.ts";
 
 const emptyForm = {
   name: "",
@@ -9,26 +10,18 @@ const emptyForm = {
 
 export const ContactForm = () => {
   const [fields, setFields] = useState(emptyForm);
-  
+
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
     "idle",
   );
 
-  const handleSubmit = async (e: React.SyntheticEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
     try {
-      const response = await fetch("https://mail.mark0s.com/email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(fields),
-      });
-      if (response.status === 200) {
-        setStatus("sent");
-        setFields(emptyForm);
-      } else {
-        setStatus("error");
-      }
+      await API.post("/contact", fields);
+      setStatus("sent");
+      setFields(emptyForm);
     } catch {
       setStatus("error");
     }
@@ -74,7 +67,9 @@ export const ContactForm = () => {
         <p className="form-status success">Message sent!</p>
       )}
       {status === "error" && (
-        <p className="form-status error">Something went wrong. Try again.</p>
+        <p className="form-status error">
+          Something went wrong. Please try again.
+        </p>
       )}
       <Button type="submit" disabled={status === "sending"}>
         {status === "sending" ? "Sending..." : "Send"}
