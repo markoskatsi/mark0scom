@@ -7,6 +7,13 @@ const apiClient = axios.create({
 });
 
 export const API = {
-  post: <T>(endpoint: string, data: unknown) =>
-    apiClient.post<T>(endpoint, data).then((res) => res.data),
+  post: <T>(
+    endpoint: string,
+    data?: unknown,
+    params?: Record<string, unknown>,
+  ) =>
+    apiClient.post<T>(endpoint, data, { params }).then((result) => ({
+      isSuccess: result.status >= 200 && result.status < 300,
+      data: result.data,
+    })),
 };

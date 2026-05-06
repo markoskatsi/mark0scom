@@ -13,6 +13,7 @@ import { GiFox } from "react-icons/gi";
 import { GiPanda } from "react-icons/gi";
 import { MdLightMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
+import { FaFilePdf } from "react-icons/fa";
 import "./Icon.scss";
 
 export const Icon = ({ children }: { children: React.ReactNode }) => {
@@ -59,6 +60,14 @@ function SCSS({ size = 18 }: { size?: number }) {
   return (
     <span title="SCSS" className="icon">
       <BsFiletypeScss size={size} />
+    </span>
+  );
+}
+
+function PDF({ size = 18 }: { size?: number }) {
+  return (
+    <span title="Download CV" className="icon">
+      <FaFilePdf size={size} />
     </span>
   );
 }
@@ -180,3 +189,4 @@ Icon.Fox = Fox;
 Icon.Panda = Panda;
 Icon.Light = Light;
 Icon.Dark = Dark;
+Icon.PDF = PDF;

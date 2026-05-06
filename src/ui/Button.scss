@@ -1,6 +1,9 @@
 button {
   display: inline-flex;
   align-items: center;
+  color: var(--text-h);
+  gap: 6px;
+  line-height: 1;
   padding: 8px 18px;
   border-radius: 999px;
   border: none;
@@ -17,6 +20,13 @@ button {
   &.primary {
     background: var(--accent);
     color: var(--bg);
+  }
+
+  &.square {
+    border-radius: 0px;
+    border: 1px solid var(--accent-border);
+    background: var(--accent-bg);
+    padding: 15px 16px;
   }
 }
 

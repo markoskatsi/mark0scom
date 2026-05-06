@@ -4,12 +4,14 @@ export const Button = ({
   children,
   variant = "primary",
   href,
+  onClick,
   type = "button",
   disabled = false,
 }: {
   children: React.ReactNode;
-  variant?: "primary" | "outline" | "contact-icon";
+  variant?: "primary" | "outline" | "contact-icon" | "square";
   href?: string;
+  onClick?: () => void;
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
 }) => {
@@ -26,7 +28,12 @@ export const Button = ({
     );
   } else {
     return (
-      <button className={variant} disabled={disabled} type={type}>
+      <button
+        className={variant}
+        disabled={disabled}
+        type={type}
+        onClick={onClick}
+      >
         {children}
       </button>
     );

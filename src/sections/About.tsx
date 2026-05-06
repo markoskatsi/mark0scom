@@ -1,9 +1,34 @@
 import { personal } from "../data/personal";
 import { education } from "../data/education";
+import { Icon } from "../ui/Icon";
+import { Button } from "../ui/Button";
+import { useState } from "react";
+import { API } from "../api/API";
 
 const About = () => {
-  const kingston = education[0];
-  const barnsley = education[1];
+  const kingston = education.find(
+    (e) => e.institution === "Kingston University",
+  )!;
+  const barnsley = education.find((e) => e.institution === "Barnsley College")!;
+
+  const [email, setEmail] = useState("");
+  const [showForm, setShowForm] = useState(false);
+  const [status, setStatus] = useState<
+    "idle" | "typing" | "sending" | "sent" | "error"
+  >("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("sending");
+    const response = await API.post("/cv", undefined, { email });
+    if (response.isSuccess) {
+      setEmail("");
+      setShowForm(false);
+      setStatus("sent");
+    } else {
+      setStatus("error");
+    }
+  };
 
   return (
     <section id="about">
@@ -31,6 +56,35 @@ const About = () => {
         my projects and take them through the entire lifecycle from design to
         development and deployment, using modern tools and practices.
       </p>
+      <Button variant="square" onClick={() => setShowForm(!showForm)}>
+        <Icon.PDF />
+        Get CV
+      </Button>
+      {status === "sent" && (
+        <p style={{ color: "green" }}>CV sent! Please check your inbox.</p>
+      )}
+      {showForm && (
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="email">Enter your email to receive my CV:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+
+          <Button type="submit">
+            {status === "sending" ? "Sending..." : "Send"}
+          </Button>
+          {status === "error" && (
+            <p style={{ color: "red" }}>
+              Something went wrong. Please try again.
+            </p>
+          )}
+        </form>
+      )}
     </section>
   );
 };
