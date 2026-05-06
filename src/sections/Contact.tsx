@@ -3,8 +3,25 @@ import { Button, ButtonTray } from "../ui/Button.tsx";
 import { Icon } from "../ui/Icon.tsx";
 import { Card } from "../ui/Card.tsx";
 import { ContactForm } from "../entities/contact/ContactForm.tsx";
+import type { ContactRecord } from "../entities/contact/ContactForm.tsx";
+import { API } from "../api/API.ts";
+import { useState } from "react";
 
 const Contact = () => {
+  const [status, setStatus] = useState<"Send" | "Sending" | "Sent" | "Error">(
+    "Send",
+  );
+
+  const handleSubmit = async (data: ContactRecord) => {
+    setStatus("Sending");
+    const response = await API.post("/contact", data);
+    if (response.isSuccess) {
+      setStatus("Sent");
+    } else {
+      setStatus("Error");
+    }
+  };
+
   return (
     <section id="contact">
       <h2>Contact</h2>
@@ -31,7 +48,17 @@ const Contact = () => {
               </ButtonTray>
             </div>
           </div>
-          <ContactForm />
+          <ContactForm
+            onSubmit={handleSubmit}
+            submitText={status}
+            message={
+              status === "Sent" ? (
+                <p style={{ color: "green", margin: "4px 0" }}>Message sent successfully!</p>
+              ) : status === "Error" ? (
+                <p style={{ color: "red", margin: "4px 0" }}>Failed to send message.</p>
+              ) : null
+            }
+          />
         </div>
       </Card>
     </section>

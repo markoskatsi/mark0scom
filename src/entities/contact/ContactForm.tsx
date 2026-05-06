@@ -1,79 +1,82 @@
-import { useState } from "react";
-import { Button } from "../../ui/Button.tsx";
-import { API } from "../../api/API.ts";
+import Form from "../../ui/Form";
 
-const emptyForm = {
+export interface ContactRecord extends Record<string, unknown> {
+  name: string;
+  email: string;
+  message: string;
+}
+
+const emptyContact: ContactRecord = {
   name: "",
   email: "",
   message: "",
 };
 
-export const ContactForm = () => {
-  const [fields, setFields] = useState(emptyForm);
+export const ContactForm = ({
+  onSubmit,
+  initialContact = emptyContact,
+  submitText,
+  message,
+}: {
+  onSubmit: (data: ContactRecord) => void;
+  initialContact?: ContactRecord;
+  submitText?: string;
+  message?: React.ReactNode;
+}) => {
+  const validation = {
+    isValid: {
+      name: (v: unknown) => typeof v === "string" && v.length > 2,
+      email: (v: unknown) =>
+        typeof v === "string" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v),
+      message: (v: unknown) => typeof v === "string" && v.length > 2,
+    },
+    errorMessage: {
+      name: "Surely your name is longer :)",
+      email: "Please provide a valid email address :)",
+      message: "Please provide a more meaningful message :)",
+    },
+  };
 
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
-    "idle",
+  const [contact, errors, handleChange, handleSubmit] = Form.useForm(
+    initialContact,
+    validation,
+    onSubmit,
   );
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("sending");
-    try {
-      await API.post("/contact", fields);
-      setStatus("sent");
-      setFields(emptyForm);
-    } catch {
-      setStatus("error");
-    }
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    setFields({ ...fields, [e.target.name]: e.target.value });
-  };
-
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="form-title">Send me a message</div>
-      <label htmlFor="name">Your Name:</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        value={fields.name}
-        onChange={handleChange}
-        required
-      />
-      <label htmlFor="email">Your Email:</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        value={fields.email}
-        onChange={handleChange}
-        required
-      />
-      <label htmlFor="message">Your Message:</label>
-      <textarea
-        id="message"
-        name="message"
-        rows={4}
-        value={fields.message}
-        onChange={handleChange}
-        required
-      />
-      {status === "sent" && (
-        <p className="form-status success">Message sent!</p>
-      )}
-      {status === "error" && (
-        <p className="form-status error">
-          Something went wrong. Please try again.
-        </p>
-      )}
-      <Button type="submit" disabled={status === "sending"}>
-        {status === "sending" ? "Sending..." : "Send"}
-      </Button>
-    </form>
+    <Form onSubmit={handleSubmit} submitText={submitText} message={message}>
+      <Form.Item label="Name" htmlFor="name" error={errors.name}>
+        <input
+          className="FormInput"
+          type="text"
+          name="name"
+          id="name"
+          value={contact.name}
+          onChange={handleChange}
+        />
+      </Form.Item>
+
+      <Form.Item label="Email" htmlFor="email" error={errors.email}>
+        <input
+          className="FormInput"
+          type="text"
+          name="email"
+          id="email"
+          value={contact.email}
+          onChange={handleChange}
+        />
+      </Form.Item>
+
+      <Form.Item label="Message" htmlFor="message" error={errors.message}>
+        <textarea
+          className="FormInput"
+          name="message"
+          id="message"
+          value={contact.message}
+          onChange={handleChange}
+          rows={4}
+        />
+      </Form.Item>
+    </Form>
   );
 };

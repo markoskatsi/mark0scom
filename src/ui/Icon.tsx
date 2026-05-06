@@ -14,6 +14,8 @@ import { GiPanda } from "react-icons/gi";
 import { MdLightMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
 import { FaFilePdf } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
 import "./Icon.scss";
 
 export const Icon = ({ children }: { children: React.ReactNode }) => {
@@ -174,6 +176,14 @@ function Dark({ size = 18 }: { size?: number }) {
   );
 }
 
+function Tick({ size = 16 }: { size?: number }) {
+  return <FaCheck size={size} />;
+}
+
+function Cross({ size = 16 }: { size?: number }) {
+  return <FaTimes size={size} />;
+}
+
 Icon.GitHub = GitHub;
 Icon.React = React;
 Icon.TypeScript = TypeScript;
@@ -190,3 +200,5 @@ Icon.Panda = Panda;
 Icon.Light = Light;
 Icon.Dark = Dark;
 Icon.PDF = PDF;
+Icon.Tick = Tick;
+Icon.Cross = Cross;

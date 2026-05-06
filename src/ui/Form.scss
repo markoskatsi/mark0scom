@@ -1,0 +1,54 @@
+.Form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+
+.Bordered {
+  border-top: 1px solid var(--border);
+}
+
+.FormTray {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.FormItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.FormLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.FormInput {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+  font-size: 0.9rem;
+  font-family: var(--sans);
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+  resize: vertical;
+
+  &:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+}
+
+.FormError {
+  font-size: 0.8rem;
+  color: #f87171;
+  margin: 0;
+}

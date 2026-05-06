@@ -9,7 +9,7 @@ export const Button = ({
   disabled = false,
 }: {
   children: React.ReactNode;
-  variant?: "primary" | "outline" | "contact-icon" | "square";
+  variant?: "primary" | "outline" | "contact-icon" | "square" | "darkDanger";
   href?: string;
   onClick?: () => void;
   type?: "button" | "submit" | "reset";
