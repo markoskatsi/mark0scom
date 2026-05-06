@@ -49,6 +49,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="Bordered">
+            <div className="contact-title">Send me a message!</div>
             <ContactForm
               onSubmit={handleSubmit}
               submitText={status === "Sending" ? "Sending..." : "Send"}

@@ -1,4 +1,4 @@
-import Form from "../../ui/Form";
+import { Form } from "../../ui/Form";
 
 export interface Email extends Record<string, unknown> {
   email: string;
