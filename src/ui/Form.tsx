@@ -17,7 +17,7 @@ export default function Form({
   message?: React.ReactNode;
 }) {
   return (
-    <form className="Form Bordered" onSubmit={onSubmit}>
+    <form className="Form" onSubmit={onSubmit}>
       <div className="FormTray">{children}</div>
       {message}
       <ButtonTray>

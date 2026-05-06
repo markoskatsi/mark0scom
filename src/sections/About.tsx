@@ -4,6 +4,7 @@ import { Icon } from "../ui/Icon";
 import { Button } from "../ui/Button";
 import { useState } from "react";
 import { API } from "../api/API";
+import { CVForm, type Email } from "../entities/contact/CVForm";
 
 const About = () => {
   const kingston = education.find(
@@ -11,22 +12,18 @@ const About = () => {
   )!;
   const barnsley = education.find((e) => e.institution === "Barnsley College")!;
 
-  const [email, setEmail] = useState("");
   const [showForm, setShowForm] = useState(false);
-  const [status, setStatus] = useState<
-    "idle" | "typing" | "sending" | "sent" | "error"
-  >("idle");
+  const [status, setStatus] = useState<"Send" | "Sending" | "Sent" | "Error">(
+    "Send",
+  );
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("sending");
-    const response = await API.post("/cv", undefined, { email });
+  const handleSubmit = async (email: Email) => {
+    setStatus("Sending");
+    const response = await API.post("/cv", undefined, email);
     if (response.isSuccess) {
-      setEmail("");
-      setShowForm(false);
-      setStatus("sent");
+      setStatus("Sent");
     } else {
-      setStatus("error");
+      setStatus("Error");
     }
   };
 
@@ -60,30 +57,23 @@ const About = () => {
         <Icon.PDF />
         Get CV
       </Button>
-      {status === "sent" && (
-        <p style={{ color: "green" }}>CV sent! Please check your inbox.</p>
-      )}
-      {showForm && (
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="email">Enter your email to receive my CV:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
 
-          <Button type="submit">
-            {status === "sending" ? "Sending..." : "Send"}
-          </Button>
-          {status === "error" && (
-            <p style={{ color: "red" }}>
-              Something went wrong. Please try again.
-            </p>
-          )}
-        </form>
+      {showForm && (
+        <CVForm
+          onSubmit={handleSubmit}
+          submitText={status === "Sending" ? "Sending..." : "Send CV"}
+          message={
+            status === "Sent" ? (
+              <p style={{ color: "green" }}>
+                CV sent! Please check your inbox.
+              </p>
+            ) : status === "Error" ? (
+              <p style={{ color: "red" }}>
+                Failed to send CV. Please try again.
+              </p>
+            ) : null
+          }
+        />
       )}
     </section>
   );

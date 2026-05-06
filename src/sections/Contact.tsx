@@ -48,17 +48,23 @@ const Contact = () => {
               </ButtonTray>
             </div>
           </div>
-          <ContactForm
-            onSubmit={handleSubmit}
-            submitText={status}
-            message={
-              status === "Sent" ? (
-                <p style={{ color: "green", margin: "4px 0" }}>Message sent successfully!</p>
-              ) : status === "Error" ? (
-                <p style={{ color: "red", margin: "4px 0" }}>Failed to send message.</p>
-              ) : null
-            }
-          />
+          <div className="Bordered">
+            <ContactForm
+              onSubmit={handleSubmit}
+              submitText={status === "Sending" ? "Sending..." : "Send"}
+              message={
+                status === "Sent" ? (
+                  <p style={{ color: "green", margin: "4px 0" }}>
+                    Message sent successfully!
+                  </p>
+                ) : status === "Error" ? (
+                  <p style={{ color: "red", margin: "4px 0" }}>
+                    Failed to send message.
+                  </p>
+                ) : null
+              }
+            />
+          </div>
         </div>
       </Card>
     </section>
