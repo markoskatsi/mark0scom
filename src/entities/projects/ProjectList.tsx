@@ -1,7 +1,7 @@
 import AliceCarouselModule from "react-alice-carousel";
 const AliceCarousel =
   (AliceCarouselModule as any).default ?? AliceCarouselModule;
-import "react-alice-carousel/lib/scss/alice-carousel.scss";
+import "react-alice-carousel/lib/alice-carousel.css";
 import { Card } from "../../ui/Card.tsx";
 import { ProjectItem } from "./ProjectItem.tsx";
 import type { Project } from "../../data/projects.ts";
