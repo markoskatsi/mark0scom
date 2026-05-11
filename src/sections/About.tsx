@@ -58,7 +58,7 @@ const About = () => {
         Get CV
       </Button>
 
-      {showForm && (
+      <div className={`cv-form-container${showForm ? " cv-form-container--open" : ""}`}>
         <CVForm
           onSubmit={handleSubmit}
           submitText={status === "Sending" ? "Sending..." : "Send CV"}
@@ -74,7 +74,7 @@ const About = () => {
             ) : null
           }
         />
-      )}
+      </div>
     </section>
   );
 };
