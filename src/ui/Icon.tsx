@@ -16,6 +16,7 @@ import { MdDarkMode } from "react-icons/md";
 import { FaFilePdf } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa";
 import { FaTimes } from "react-icons/fa";
+import { SiFastapi } from "react-icons/si";
 import "./Icon.scss";
 
 export const Icon = ({ children }: { children: React.ReactNode }) => {
@@ -78,6 +79,14 @@ function Home({ size = 18 }: { size?: number }) {
   return (
     <span title="Home" className="icon">
       <FaHome size={size} />
+    </span>
+  );
+}
+
+function FastAPI({ size = 18 }: { size?: number }) {
+  return (
+    <span title="FastAPI" className="icon">
+      <SiFastapi size={size} />
     </span>
   );
 }
@@ -202,3 +211,4 @@ Icon.Dark = Dark;
 Icon.PDF = PDF;
 Icon.Tick = Tick;
 Icon.Cross = Cross;
+Icon.FastAPI = FastAPI;

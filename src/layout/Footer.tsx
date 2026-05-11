@@ -10,14 +10,17 @@ export const Footer = () => {
       </div>
       <div className="footer-right">
         <div className="footer-info">
-          Built with <Icon.React />, <Icon.TypeScript />, <Icon.SCSS />, and
-          hosted on my <Icon.Home /> <Icon.Server />
+          Built with React, TypeScript and FastAPI.
         </div>
         <div className="footer-source">
           Source code available on{" "}
-          <Button href="https://github.com/markoskatsi/mark0scom">
-            <Icon.GitHub />
-          </Button>
+          <a
+            href="https://github.com/markoskatsi/mark0scom"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
         </div>
       </div>
     </footer>
