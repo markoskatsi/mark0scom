@@ -5,6 +5,7 @@ header {
   justify-content: center;
   gap: 40px;
   user-select: none;
+  transition: gap 0.3s;
 
   a {
     text-decoration: none;
@@ -38,5 +39,12 @@ header {
     100% {
       transform: rotate(0deg);
     }
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: flex;
+    gap: 20px;
+    padding: 20px;
+    transition: gap 0.3s;
   }
 }

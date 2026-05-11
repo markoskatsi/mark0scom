@@ -1,5 +1,3 @@
-import { Button } from "../ui/Button";
-import { Icon } from "../ui/Icon";
 import "./Footer.scss";
 
 export const Footer = () => {
