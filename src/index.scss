@@ -109,13 +109,15 @@ section {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.4s ease, opacity 0.3s ease;
+    transition:
+      max-height 0.4s ease,
+      opacity 0.3s ease;
 
     &--open {
       max-height: 600px;
       opacity: 1;
     }
-    
+
     p {
       margin: 4px 0;
     }

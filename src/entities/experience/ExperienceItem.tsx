@@ -6,9 +6,18 @@ export const ExperienceItem = ({ experience }: { experience: Experience }) => {
     <Card key={experience.title}>
       <div className="experience-card">
         <div className="experience-header">
-          <div className="experience-role">
-            <h3 className="title">{experience.title}</h3>
-            <span className="company">{experience.company}</span>
+          <div className="experience-details">
+            {experience.image && (
+              <img
+                src={experience.image}
+                alt={`${experience.company} logo`}
+                className="company-logo"
+              />
+            )}
+            <div className="experience-role">
+              <h3 className="title">{experience.title}</h3>
+              <span className="company">{experience.company}</span>
+            </div>
           </div>
           <span className="duration">{experience.duration}</span>
         </div>
