@@ -1,13 +1,19 @@
 import type { Experience } from "../../data/experience";
+import { Card } from "../../ui/Card";
 
 export const ExperienceItem = ({ experience }: { experience: Experience }) => {
   return (
-    <div key={experience.title}>
-      <h3>
-        {experience.title} @ {experience.company}
-      </h3>
-      <p> {experience.duration}</p>
-      <p>{experience.description}</p>
-    </div>
+    <Card key={experience.title}>
+      <div className="experience-card">
+        <div className="experience-header">
+          <div className="experience-role">
+            <h3 className="title">{experience.title}</h3>
+            <span className="company">{experience.company}</span>
+          </div>
+          <span className="duration">{experience.duration}</span>
+        </div>
+        <p className="description">{experience.description}</p>
+      </div>
+    </Card>
   );
 };

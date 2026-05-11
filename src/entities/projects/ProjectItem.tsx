@@ -39,7 +39,7 @@ export const ProjectItem = ({ project }: { project: Project }) => {
         <p>{project.description}</p>
         {project.skills && (
           <div className="skills">
-            {project.skills.map((skill: string) => (
+            {project.skills.map((skill) => (
               <span key={skill}>{skill}</span>
             ))}
           </div>

@@ -29,11 +29,10 @@
 
 .cardContainer {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 10px 0;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -47,6 +46,64 @@
   overflow: hidden;
   color: var(--text);
 
+  // Experience Card
+  .experience-card {
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    &:hover {
+      transform: translateY(-2px);
+      transition: transform 0.2s;
+    }
+
+    .experience-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .experience-role {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-h);
+      margin: 0;
+    }
+
+    .company {
+      font-size: 0.875rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .duration {
+      font-size: 0.78rem;
+      color: var(--text);
+      background: var(--accent-bg);
+      border: 1px solid var(--accent-border);
+      border-radius: 999px;
+      padding: 4px 12px;
+      white-space: nowrap;
+      margin-top: 2px;
+    }
+
+    .description {
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.7;
+      margin: 0;
+    }
+  }
+
+  // Contact Card
   .contact-wrapper {
     display: flex;
     flex-direction: column;
@@ -105,6 +162,7 @@
     }
   }
 
+  // Project Card
   .img {
     position: relative;
     background: var(--social-bg);
