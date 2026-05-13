@@ -2,8 +2,8 @@ footer {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  gap: 24px;
-  padding: 25px;
+  gap: 21.6px;
+  padding: 22.5px;
   border-top: 1px solid var(--border);
 
   @media (max-width: 600px) {
@@ -30,7 +30,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 8px;
+  gap: 7.2px;
   justify-self: end;
 
   @media (max-width: 600px) {
@@ -44,7 +44,7 @@ footer {
   align-items: center;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 4px;
+  gap: 3.6px;
   font-size: 0.88rem;
   color: var(--text);
 
@@ -60,7 +60,7 @@ footer {
 .footer-source {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 7.2px;
   font-size: 0.88rem;
   color: var(--text);
 

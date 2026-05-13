@@ -1,11 +1,11 @@
 .up-arrow {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 18px;
+  right: 18px;
   background: var(--accent-bg);
   border: 1px solid var(--accent-border);
   border-radius: 50%;
-  padding: 10px;
+  padding: 9px;
   z-index: 100;
   cursor: pointer;
   opacity: 0.7;
@@ -19,7 +19,7 @@
 
 @keyframes drop-in {
   from {
-    transform: translateY(-12px);
+    transform: translateY(-11px);
     opacity: 0;
   }
   to {

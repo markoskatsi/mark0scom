@@ -19,8 +19,8 @@
   --heading: system-ui, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
+  font: 16.2px/145% var(--sans);
+  letter-spacing: 0.16px;
   color-scheme: light;
   color: var(--text-h);
   background: var(--bg);
@@ -30,7 +30,7 @@
   -moz-osx-font-smoothing: grayscale;
 
   @media (max-width: 1024px) {
-    font-size: 16px;
+    font-size: 14.4px;
   }
 }
 
@@ -66,7 +66,7 @@
 
 h1 {
   font-family: "PT Serif", serif;
-  font-size: 36px;
+  font-size: 32px;
 }
 
 html {
@@ -85,14 +85,14 @@ main {
 
 section {
   width: 100%;
-  max-width: 800px;
+  max-width: 720px;
   margin: 0 auto;
-  padding: 25px;
+  padding: 22.5px;
   box-sizing: border-box;
   text-align: left;
 
   h2 {
-    font-size: 28px;
+    font-size: 25px;
     font-style: italic;
   }
 
@@ -100,9 +100,9 @@ section {
     content: "";
     display: block;
     width: 10%;
-    height: 6px;
+    height: 5.4px;
     background: var(--accent);
-    margin-top: 32px;
+    margin-top: 29px;
   }
 
   .cv-form-container {
@@ -114,7 +114,7 @@ section {
       opacity 0.3s ease;
 
     &--open {
-      max-height: 600px;
+      max-height: 540px;
       opacity: 1;
     }
 

@@ -1,9 +1,9 @@
 .Form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding-top: 22px;
-  
+  gap: 14.4px;
+  padding-top: 19.8px;
+
 }
 
 .Bordered {
@@ -13,13 +13,13 @@
 .FormTray {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10.8px;
 }
 
 .FormItem {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3.6px;
 }
 
 .FormLabel {
@@ -30,8 +30,8 @@
 
 .FormInput {
   width: 100%;
-  padding: 10px 14px;
-  border-radius: 8px;
+  padding: 9px 12.6px;
+  border-radius: 7.2px;
   border: 1px solid var(--border);
   background: var(--bg);
   color: var(--text-h);
