@@ -2,6 +2,8 @@ import { Icon } from "./Icon";
 import { Button, ButtonTray } from "./Button";
 import { useForm } from "../hooks/useForm";
 import "./Form.scss";
+import { useState } from "react";
+import { Loading } from "./Loading";
 
 export const Form = ({
   children,
@@ -16,14 +18,26 @@ export const Form = ({
   submitText?: string;
   message?: React.ReactNode;
 }) => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
+    try {
+      await onSubmit(e);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
-    <form className="Form" onSubmit={onSubmit}>
+    <form className="Form" onSubmit={handleSubmit}>
       <div className="FormTray">{children}</div>
       {message}
       <ButtonTray>
         <Button type="submit">
           <Icon.Tick />
-          {submitText}
+          {isLoading ? <Loading /> : submitText}
         </Button>
         {onCancel && (
           <Button onClick={onCancel} variant="darkDanger" type="button">
@@ -34,7 +48,7 @@ export const Form = ({
       </ButtonTray>
     </form>
   );
-}
+};
 
 const Item = ({
   children,
@@ -46,7 +60,7 @@ const Item = ({
   label: string;
   htmlFor: string;
   error?: string | null;
-})  => {
+}) => {
   return (
     <div className="FormItem">
       <label className="FormLabel" htmlFor={htmlFor}>
@@ -56,7 +70,7 @@ const Item = ({
       {error && <p className="FormError">{error}</p>}
     </div>
   );
-}
+};
 
 Form.Item = Item;
 Form.useForm = useForm;
