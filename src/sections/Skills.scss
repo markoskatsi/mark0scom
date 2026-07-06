@@ -1,0 +1,35 @@
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 21.6px;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skills-group {
+  h3 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text);
+    margin: 0 0 9px;
+  }
+}
+
+.skills-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7.2px;
+
+  span {
+    font-size: 0.8rem;
+    padding: 3.6px 10.8px;
+    border-radius: 999px;
+    background: var(--accent-bg);
+    border: 1px solid var(--accent-border);
+    color: var(--text);
+  }
+}
