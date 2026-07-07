@@ -5,6 +5,7 @@ import cvbuilderImage from "../assets/projects/cvbuilder.jpg";
 import codesheildImage from "../assets/projects/codeshield.png";
 import habittrackerImage from "../assets/projects/habittracker.png";
 import geoquestImage from "../assets/projects/geoquest.png";
+import mailserviceImage from "../assets/projects/mailservice.png";
 
 export interface Project {
   title: string;
@@ -81,6 +82,15 @@ export const projects: Project[] = [
     skills: ["Pytest", "Mocking", "Testing"],
     github: "https://github.com/XP-Elites/XP-Backend/tree/main/tests",
     image: codesheildImage,
+  },
+  {
+    title: "Mail Service",
+    description:
+      "FastAPI backend powering this portfolio's contact form and CV delivery, containerised and self-hosted alongside the site. Handles templated HTML emails, auto-replies, and CV attachment delivery via SMTP.",
+    skills: ["FastAPI", "Python", "Docker", "SMTP"],
+    live: "https://mail.mark0s.com/docs",
+    github: "https://github.com/markoskatsi/mail-service",
+    image: mailserviceImage,
   },
   {
     title: "CVBuilder",
