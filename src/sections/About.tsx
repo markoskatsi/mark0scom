@@ -31,7 +31,7 @@ const About = () => {
     <section id="about">
       <h1>{personal.name}</h1>
       <p>
-        I am currently a final-year {kingston.degree} student @{" "}
+        I'm a First-Class Honours {kingston.degree} graduate from{" "}
         <strong>{kingston.institution}</strong>. I'm passionate about full-stack
         development and building projects that make a real difference in
         people's daily lives. I'm currently looking for{" "}

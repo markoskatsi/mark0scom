@@ -32,7 +32,7 @@ export const experience: Experience[] = [
     company: "Marks and Spencer",
     duration: "Apr 2025 - Present",
     description:
-      "Working alongside my studies to develop communication, teamwork, and adaptability in a fast-paced customer-facing environment. Supporting day-to-day store operations has strengthened my ability to stay focused and efficient under pressure, skills I bring directly into my work as a developer.",
+      "Developed communication, teamwork, and adaptability in a fast-paced customer-facing environment alongside my degree. Supporting day-to-day store operations strengthened my ability to stay focused and efficient under pressure, skills I bring directly into my work as a developer.",
     image: MarksAndSpencerLogo,
   },
 ];

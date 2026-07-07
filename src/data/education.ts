@@ -10,7 +10,7 @@ export const education: Education[] = [
     institution: "Kingston University",
     level: "Undergraduate",
     degree: "Computer Science",
-    duration: "Sep 2023 - Present",
+    duration: "Sep 2023 - Jun 2026",
   },
   {
     institution: "Barnsley College",
