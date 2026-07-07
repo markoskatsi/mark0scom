@@ -80,7 +80,6 @@ export const projects: Project[] = [
       "Pytest test suite for a FastAPI backend with mocking, plus manual UI testing of a React frontend.",
     skills: ["Pytest", "Mocking", "Testing"],
     github: "https://github.com/XP-Elites/XP-Backend/tree/main/tests",
-    live: "https://xp.cattoindustries.com/",
     image: codesheildImage,
   },
   {
