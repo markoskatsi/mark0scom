@@ -68,5 +68,9 @@ header {
     > *:last-child {
       order: 3;
     }
+
+    a {
+      font-size: clamp(14px, 4vw, 16px);
+    }
   }
 }
